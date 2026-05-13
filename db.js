@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
-const MongoURL = "mongodb+srv://Clothing001:Clothing001@cluster0.ykda9jb.mongodb.net/Clothing?appName=Cluster0"
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const ConnectDB = async ()=>{
   try {
-    const MongoDB = mongoose.connect(MongoURL)
+    const MongoDB = await mongoose.connect(process.env.MONGODB_URL)
     console.log("Database Connected")
   } catch (error) {
     console.log("Can't Connect the database..")
