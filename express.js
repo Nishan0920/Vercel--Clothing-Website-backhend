@@ -4,7 +4,7 @@ import Entry from './Routes/User.js'
 import data from './Routes/Data.js'
 import cors from 'cors'
 const app = express()
-const port = 5000
+
 ConnectDB()
 app.use(cors({
   origin: "https://vercel-clothing-website-frontend.vercel.app",
@@ -17,6 +17,4 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+module.exports = app
