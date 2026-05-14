@@ -45,15 +45,20 @@ router.post(
         password: hashData,
       });
 
-      const token = jwt.sign(
-        { user: { id: newUser.id } },
-        process.env.JWT_SECRET
-      );
+      const JWT_SECRET ="THISISMYSECRETKEY"
+      
+      const data = {
+        user : {
+          id : newUser.id
+        }
+      }
+       const authToken = jwt.sign(data,JWT_SECRET)
+
 
       res.status(200).json({
         success: true,
         message: "User created successfully",
-        authToken: token,
+        authToken: authToken,
       });
     } catch (error) {
       console.log(error);
@@ -97,10 +102,14 @@ router.post(
         });
       }
 
-      const token = jwt.sign(
-        { user: { id: existingUser.id } },
-        process.env.JWT_SECRET
-      );
+      const JWT_SECRET ="THISISMYSECRETKEY"
+      
+      const data = {
+        user : {
+          id : newUser.id
+        }
+      }
+       const authToken = jwt.sign(data,JWT_SECRET)
 
       res.status(200).json({
         success: true,
