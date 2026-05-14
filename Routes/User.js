@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
-/* SIGNUP */
+
 router.post(
   "/signup",
   [
@@ -60,7 +60,7 @@ router.post(
   }
 );
 
-/* SIGNIN */
+
 router.post(
   "/signin",
   [
