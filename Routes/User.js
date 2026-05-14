@@ -3,6 +3,8 @@ import { body, validationResult } from "express-validator";
 import User from "../Models/Entry.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config()
 
 const router = express.Router();
 
