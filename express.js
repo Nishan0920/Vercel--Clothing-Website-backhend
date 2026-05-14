@@ -3,7 +3,7 @@ import ConnectDB from './db.js'
 import Entry from './Routes/User.js'
 import data from './Routes/Data.js'
 import cors from 'cors'
-import serverless from "serverless-http";
+
 const app = express()
 
 ConnectDB()
@@ -18,4 +18,4 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-export default serverless(app)
+export default app
