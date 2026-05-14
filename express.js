@@ -6,7 +6,10 @@ import cors from 'cors'
 const app = express()
 const port = 5000
 ConnectDB()
-app.use(cors())
+app.use(cors({
+  origin: "https://vercel-clothing-website-frontend.vercel.app",
+  credentials: true
+}));
 app.use(express.json())
 app.use("/api",Entry)
 app.use("/api",data)
